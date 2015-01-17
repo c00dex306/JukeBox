@@ -36,6 +36,7 @@ public class OMXPlayer implements ProcessHandler.AfterRunnable {
 
     @Override
     public void onProcessDead() {
+        dead = true;
         JukeBox.getJukeBox().onLastVideoEnd();
     }
 }
