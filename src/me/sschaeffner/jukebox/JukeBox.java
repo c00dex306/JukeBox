@@ -8,6 +8,7 @@ public class JukeBox {
     public JukeBox(String v0) {
         this.video0 = v0;
         newestJukeBox = this;
+        nextVideo = v0;
     }
 
     private static JukeBox newestJukeBox;
@@ -17,6 +18,7 @@ public class JukeBox {
 
     OMXPlayer omxp;
     String video0;
+    String nextVideo;
 
 
     public void start() {
@@ -24,14 +26,13 @@ public class JukeBox {
     }
 
     public void startOtherVideo(String media) {
+        nextVideo = media;
         omxp.kill();
-        omxp = new OMXPlayer(media, false);
     }
 
     void onLastVideoEnd() {
-        if (omxp.isDead()) {
-            omxp = new OMXPlayer("/home/pi/videos/hypnose.mp4", true);
-        }
+        omxp = new OMXPlayer(nextVideo, true);
+        nextVideo = video0;
     }
 
     public void jumpTo0() {
