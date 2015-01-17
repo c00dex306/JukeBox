@@ -21,9 +21,6 @@ public class JukeBox {
 
     public void start() {
         omxp = new OMXPlayer(video0, true);
-
-        Thread ti = new Thread(new InputHandler());
-        ti.start();
     }
 
     public void startOtherVideo(String media) {

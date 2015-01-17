@@ -3,6 +3,11 @@ package me.sschaeffner.jukebox;
 import java.util.Scanner;
 
 /**
+ * THIS IS JUST AN EXAMPLE IMPLEMENTATION!
+ * LIBRARY IS: JukeBox, OMXPlayer and ProcessHandler!
+ */
+
+/**
  * @author sschaeffner
  */
 public class InputHandler implements Runnable {
