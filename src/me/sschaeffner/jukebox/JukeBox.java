@@ -26,13 +26,17 @@ public class JukeBox {
     }
 
     public void startOtherVideo(String media) {
+        System.out.println("startOtherVideo -> nextVideo = media (" + media + ")");
         nextVideo = media;
         omxp.kill();
+        System.out.println("startOtherVideo -> done");
     }
 
     void onLastVideoEnd() {
-        omxp = new OMXPlayer(nextVideo, true);
+        System.out.println("onLastVideoEnd -> new OMXPlayer(nextVideo=" + nextVideo + ", " + (nextVideo == video0) + ")");
+        omxp = new OMXPlayer(nextVideo, nextVideo == video0);
         nextVideo = video0;
+        System.out.println("onLastVideoEnd -> nextVideo = video0");
     }
 
     public void jumpTo0() {
